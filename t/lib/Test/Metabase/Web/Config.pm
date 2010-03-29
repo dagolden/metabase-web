@@ -28,7 +28,7 @@ sub import {
   my $config_file = dir($STORAGE_DIR)->file('test.json');
 
   open my $fh, '>', $config_file or die "can't write to $config_file: $!";
-  print { $fh } JSON->new->encode($config);
+  print { $fh } JSON->new->ascii->encode($config);
   $ENV{METABASE_WEB_CONFIG} = $config_file;
 
   no warnings 'once';
