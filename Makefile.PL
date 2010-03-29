@@ -30,6 +30,6 @@ build_requires('perl'                         => 5.006   );
 
 auto_manifest;
 tests_recursive;
-extra_tests;
+#extra_tests;
 
 WriteAll;
