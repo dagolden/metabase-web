@@ -23,6 +23,10 @@ sub import {
       class => 'Test::Metabase::Gateway',
       args => { data_dir => "$STORAGE_DIR", %opts },
     },
+    'Log::Dispatch' => [ { 
+	    class => 'Null',
+	min_level => 'error',
+    }],
   };
 
   my $config_file = dir($STORAGE_DIR)->file('test.json');

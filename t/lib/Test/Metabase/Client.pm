@@ -4,14 +4,13 @@ package Test::Metabase::Client;
 use base 'Metabase::Client::Simple';
 
 use Catalyst::Test 'Metabase::Web';
-BEGIN { Metabase::Web->log->levels('fatal') } # disable logging
 
 our $VERSION = '0.001';
 
 sub new {
   my ($self, $arg) = @_;
   $self->SUPER::new({
-    url => 'http://metabase.cpan.example/',
+    uri => 'http://metabase.cpan.example/',
     %$arg,
   });
 }
