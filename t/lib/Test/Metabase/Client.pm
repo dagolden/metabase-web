@@ -42,7 +42,7 @@ sub retrieve_fact_raw {
 
   my $json = $res->content;
 
-  my $decoded = JSON->new->decode($json);
+  my $decoded = JSON->new->ascii->decode($json);
   return $decoded->{fact};
 }
 

@@ -16,7 +16,7 @@ $VERSION = eval $VERSION;
 sub submit : Chained('/') Args(1) ActionClass('REST') {
   my ($self, $c, $type) = @_;
 
-  $c->stash->{type} = $type;
+  $c->stash->{type} = defined $type ? $type : q{};
 }
 
 sub submit_POST {
